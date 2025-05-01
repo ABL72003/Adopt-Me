@@ -8,7 +8,30 @@ public abstract class Pet {
 	private boolean adopted;
 	private String type;
 	
+	/**
+	 * Constructor for files
+	 * @param name
+	 * @param age
+	 * @param species
+	 * @param id
+	 * @param adopted
+	 */
 	public Pet(String name, int age, String species, int id, boolean adopted) {
+		this.name = name;
+		this.age = age;
+		this.species = species;
+		this.id = id;
+		this.adopted = adopted;
+	}
+	
+	/**
+	 * Constructor for user input
+	 * @param name
+	 * @param age
+	 * @param species
+	 * @param adopted
+	 */
+	public Pet(String name, int age, String species, boolean adopted) {
 		this.name = name;
 		this.age = age;
 		this.species = species;
@@ -32,13 +55,11 @@ public abstract class Pet {
 		return id;
 	}
 	
-	public boolean getAdoption() {
+	public boolean getAdoptionStatus() {
 		return adopted;
 	}
 	
-	public String getType() {
-		return type;
-	}
+	public abstract String getType();
 	
 	public void setName(String name) {
 		this.name = name;
@@ -58,9 +79,5 @@ public abstract class Pet {
 	
 	public void setAdoption(boolean adopted) {
 		this.adopted = adopted;
-	}
-	
-	public void setType(String type) {
-		this.type = type;
 	}
 }
