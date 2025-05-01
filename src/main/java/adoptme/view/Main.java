@@ -1,4 +1,4 @@
-package adoptme;
+package adoptme.view;
 
 public class Main {
 
