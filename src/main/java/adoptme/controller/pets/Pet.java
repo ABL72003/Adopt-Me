@@ -6,6 +6,7 @@ public abstract class Pet {
 	private String species;
 	private int id;
 	private boolean adopted;
+	private String type;
 	
 	public Pet(String name, int age, String species, int id, boolean adopted) {
 		this.name = name;
@@ -35,7 +36,9 @@ public abstract class Pet {
 		return adopted;
 	}
 	
-	public abstract String getType();
+	public String getType() {
+		return type;
+	}
 	
 	public void setName(String name) {
 		this.name = name;
@@ -57,5 +60,7 @@ public abstract class Pet {
 		this.adopted = adopted;
 	}
 	
-	public abstract void setType(String type);
+	public void setType(String type) {
+		this.type = type;
+	}
 }
