@@ -1,6 +1,6 @@
-package adoptme.controller.pets;
+package adoptme.model;
 
-public class Cat extends Pet{
+public class Rabbit extends Pet{
 	/**
 	 * Constructor for files
 	 * @param name
@@ -9,7 +9,7 @@ public class Cat extends Pet{
 	 * @param id
 	 * @param adopted
 	 */
-	public Cat(String name, int age, String species, int id, boolean adopted) {
+	public Rabbit(String name, int age, String species, int id, boolean adopted) {
 		
 		super(name, age, species, id, adopted); // Calls Pet's constructor
 	}
@@ -21,14 +21,14 @@ public class Cat extends Pet{
 	 * @param species
 	 * @param adopted
 	 */
-	public Cat(String name, int age, String species, boolean adopted) {
+	public Rabbit(String name, int age, String species, boolean adopted) {
 		
 		super(name, age, species, adopted); // Calls Pet's constructor
 	}
 	
 	@Override
 	public String getType() {
-		return "Cat";
+		return "Rabbit";
 	}
 	
 	@Override
@@ -36,5 +36,4 @@ public class Cat extends Pet{
 	    return "[ID: " + getID() + ", Name:" + getName() + ", Age: " + getAge() + ", Species: "
 	    		+ getSpecies() + ", Adopted: " + getAdoptionStatus() + ", Type: " + getType() + "]";
 	}
-
 }

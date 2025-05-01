@@ -1,4 +1,4 @@
-package adoptme.controller.pets;
+package adoptme.model;
 
 public abstract class Pet {
 	private String name;

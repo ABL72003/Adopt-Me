@@ -1,8 +1,6 @@
-package adoptme.controller.shelter;
+package adoptme.model;
 
 import java.util.ArrayList;
-
-import adoptme.controller.pets.Pet;
 
 /**
  * Stores Pets
