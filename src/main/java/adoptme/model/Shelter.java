@@ -1,13 +1,16 @@
 package adoptme.model;
 
 import java.util.ArrayList;
+import java.util.Vector;
+
+import javax.swing.ListModel;
 
 /**
  * Stores Pets
  * @param <T>
  */
 public class Shelter <T extends Pet> {
-	private ArrayList<T> listOfPets = new ArrayList<T>();
+	private Vector<T> listOfPets = new Vector<T>();
 
 	
 	public void addPet(T pet) {
@@ -30,6 +33,10 @@ public class Shelter <T extends Pet> {
 		for (T pet : listOfPets) {
 	        System.out.println(pet);
 	    }
+	}
+	
+	public Vector<T> getList(){
+		return this.listOfPets;
 	}
 	
 	
