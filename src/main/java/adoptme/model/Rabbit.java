@@ -33,7 +33,6 @@ public class Rabbit extends Pet{
 	
 	@Override
 	public String toString() {
-	    return "[ID: " + getID() + ", Name:" + getName() + ", Age: " + getAge() + ", Species: "
-	    		+ getSpecies() + ", Adopted: " + getAdoptionStatus() + ", Type: " + getType() + "]";
+		 return "Type: " + getType() + super.toString();
 	}
 }

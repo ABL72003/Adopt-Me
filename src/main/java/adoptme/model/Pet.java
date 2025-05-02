@@ -80,4 +80,10 @@ public abstract class Pet {
 	public void setAdoption(boolean adopted) {
 		this.adopted = adopted;
 	}
+	
+	@Override
+	public String toString() {
+	    return "Name: " + getName() + ", Age: " + getAge() + ", Species: " + getSpecies() +
+	           ", ID: " + getID() + ", Adopted: " + getAdoptionStatus();
+	}
 }
