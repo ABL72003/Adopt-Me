@@ -9,6 +9,8 @@ import java.util.ArrayList;
 public class Shelter <T extends Pet> {
 	private ArrayList<T> listOfPets = new ArrayList<T>();
 
+	public Shelter() {	
+	}
 	
 	public void addPet(T pet) {
 		listOfPets.add(pet);
