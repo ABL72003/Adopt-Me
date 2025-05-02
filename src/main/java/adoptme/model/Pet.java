@@ -1,12 +1,11 @@
 package adoptme.model;
 
-public abstract class Pet {
+public abstract class Pet implements Comparable<Pet> {
 	private String name;
 	private int age;
 	private String species;
 	private int id;
 	private boolean adopted;
-	private String type;
 	
 	/**
 	 * Constructor for files
