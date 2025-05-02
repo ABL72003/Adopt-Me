@@ -12,6 +12,8 @@ import javax.swing.ListModel;
 public class Shelter <T extends Pet> {
 	private Vector<T> listOfPets = new Vector<T>();
 
+	public Shelter() {	
+	}
 	
 	public void addPet(T pet) {
 		listOfPets.add(pet);

@@ -1,12 +1,11 @@
 package adoptme.model;
 
-public abstract class Pet {
+public abstract class Pet implements Comparable<Pet> {
 	private String name;
 	private int age;
 	private String species;
 	private int id;
 	private boolean adopted;
-	private String type;
 	
 	/**
 	 * Constructor for files
@@ -79,5 +78,11 @@ public abstract class Pet {
 	
 	public void setAdoption(boolean adopted) {
 		this.adopted = adopted;
+	}
+	
+	@Override
+	public String toString() {
+	    return "Name: " + getName() + ", Age: " + getAge() + ", Species: " + getSpecies() +
+	           ", ID: " + getID() + ", Adopted: " + getAdoptionStatus();
 	}
 }
