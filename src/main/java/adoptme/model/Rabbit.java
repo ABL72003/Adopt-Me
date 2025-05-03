@@ -35,4 +35,5 @@ public class Rabbit extends Pet{
 	public String toString() {
 		 return "Type: " + getType() + super.toString();
 	}
+
 }

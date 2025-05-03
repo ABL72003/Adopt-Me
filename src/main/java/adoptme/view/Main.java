@@ -1,4 +1,4 @@
-package adoptme;
+package adoptme.view;
 
 import adoptme.model.*;
 import java.util.*;
