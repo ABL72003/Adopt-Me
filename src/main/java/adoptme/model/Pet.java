@@ -5,7 +5,7 @@ public abstract class Pet implements Comparable<Pet> {
 	private int age;
 	private String species;
 	private int id;
-	private boolean adopted;
+	private boolean adopted;//true means adopted false means not adopted
 	
 	/**
 	 * Constructor for files
@@ -34,7 +34,6 @@ public abstract class Pet implements Comparable<Pet> {
 		this.name = name;
 		this.age = age;
 		this.species = species;
-		this.id = id;
 		this.adopted = adopted;
 	}
 	
@@ -76,13 +75,27 @@ public abstract class Pet implements Comparable<Pet> {
 		this.id = id;
 	}
 	
-	public void setAdoption(boolean adopted) {
-		this.adopted = adopted;
+	public void setAdoptionStatus(boolean adopted) {
+	    // Don't allow un-adopting once adopted
+	    if (this.adopted && !adopted) {
+	        System.out.println("Cannot un-adopt a pet once adopted.");
+	        return;
+	    }
+	    
+	    // Only allow setting to true if not already adopted
+	    if (!this.adopted && adopted) {
+	        this.adopted = true;
+	    }
+	}
+	
+	@Override
+	public int compareTo(Pet otherPet) {
+		return this.name.compareTo(otherPet.getName());  // Default comparison by name
 	}
 	
 	@Override
 	public String toString() {
-	    return "Name: " + getName() + ", Age: " + getAge() + ", Species: " + getSpecies() +
+	    return ", Name: " + getName() + ", Species: " + getSpecies() +  ", Age: " + getAge() +
 	           ", ID: " + getID() + ", Adopted: " + getAdoptionStatus();
 	}
 }
