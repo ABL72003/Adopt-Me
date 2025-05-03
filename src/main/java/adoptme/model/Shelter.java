@@ -1,13 +1,16 @@
 package adoptme.model;
 
 import java.util.ArrayList;
+import java.util.Vector;
+
+import javax.swing.ListModel;
 
 /**
  * Stores Pets
  * @param <T>
  */
 public class Shelter <T extends Pet> {
-	private ArrayList<T> listOfPets = new ArrayList<T>();
+	private Vector<T> listOfPets = new Vector<T>();
 
 	public Shelter() {
 	}
@@ -28,10 +31,6 @@ public class Shelter <T extends Pet> {
 		System.out.println("Pet was successfully deleted from our system.");
 	}
 	
-	public ArrayList<T> getListOfPets() {
-		return listOfPets;
-	}
-	
 	public void viewPets() {
 		for (T pet : listOfPets) {
 	        System.out.println(pet);
@@ -46,6 +45,10 @@ public class Shelter <T extends Pet> {
 		}
 		pet.setAdoptionStatus(true);
 		System.out.println("Pet: " + pet.getName() + " was adopted!");
+	}
+
+	public Vector<T> getList(){
+		return this.listOfPets;
 	}
 	
 }
