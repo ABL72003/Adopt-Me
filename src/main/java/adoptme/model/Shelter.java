@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Shelter <T extends Pet> {
 	private ArrayList<T> listOfPets = new ArrayList<T>();
 
-	public Shelter() {	
+	public Shelter() {
 	}
 	
 	public void addPet(T pet) {
@@ -28,12 +28,24 @@ public class Shelter <T extends Pet> {
 		System.out.println("Pet was successfully deleted from our system.");
 	}
 	
+	public ArrayList<T> getListOfPets() {
+		return listOfPets;
+	}
+	
 	public void viewPets() {
 		for (T pet : listOfPets) {
 	        System.out.println(pet);
 	    }
 	}
 	
-	
+	public void adoptPet(T pet) {
+		
+		if(pet.getAdoptionStatus() == true) {
+			System.out.println("" + pet.getName() + " was already adopted");
+			return;
+		}
+		pet.setAdoptionStatus(true);
+		System.out.println("Pet: " + pet.getName() + " was adopted!");
+	}
 	
 }
