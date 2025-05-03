@@ -12,7 +12,7 @@ import javax.swing.ListModel;
 public class Shelter <T extends Pet> {
 	private Vector<T> listOfPets = new Vector<T>();
 
-	public Shelter() {	
+	public Shelter() {
 	}
 	
 	public void addPet(T pet) {
@@ -37,10 +37,18 @@ public class Shelter <T extends Pet> {
 	    }
 	}
 	
+	public void adoptPet(T pet) {
+		
+		if(pet.getAdoptionStatus() == true) {
+			System.out.println("" + pet.getName() + " was already adopted");
+			return;
+		}
+		pet.setAdoptionStatus(true);
+		System.out.println("Pet: " + pet.getName() + " was adopted!");
+	}
+
 	public Vector<T> getList(){
 		return this.listOfPets;
 	}
-	
-	
 	
 }
