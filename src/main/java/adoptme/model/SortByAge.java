@@ -9,4 +9,8 @@ public class SortByAge implements Comparator<Pet> {
 		return Integer.compare(p1.getAge(), p2.getAge());
 	}
  
+	
+	public String toString() {
+		return "Age";
+	}
 }
