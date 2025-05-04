@@ -121,6 +121,19 @@ public class ShelterController {
     	
     }
     
+    private class FilterComboBoxListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			view.getSortComboBox().getSelectedItem()
+			
+		}
+    	
+    	
+    }
+    
+    
+    //FINISH SORTING ALGORITHM IMPLEMENTATION LISTENER UP ABOVE
     
     public Shelter getShelter() {
     	return this.shelter;

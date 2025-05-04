@@ -37,7 +37,7 @@ import javax.swing.JTextField;
 public class AdoptMeView extends JFrame{
 
 	private JPanel jPanel;
-	private JComboBox<Object> comboBox;
+	private JComboBox<Object> sortByComboBox;
 	private JList<?> list;
 	private JFrame inputFrame;
 	private SortByAge ageSort = new SortByAge();
@@ -66,11 +66,11 @@ public class AdoptMeView extends JFrame{
 		table = new JTable();
 		table.setBounds(0, 0, 1, 1);
 		jPanel.add(table);
-		comboBox = new JComboBox<Object>();
-		comboBox.addItem(ageSort);
-		comboBox.addItem(speciesSort);
-		comboBox.setBounds(750, 50, 121, 21);
-		jPanel.add(comboBox);
+		sortByComboBox = new JComboBox<Object>();
+		sortByComboBox.addItem(ageSort);
+		sortByComboBox.addItem(speciesSort);
+		sortByComboBox.setBounds(750, 50, 121, 21);
+		jPanel.add(sortByComboBox);
 		
 		JTextPane txtpnSortBy = new JTextPane();
 		txtpnSortBy.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -180,7 +180,9 @@ public class AdoptMeView extends JFrame{
 		} else {
 		return nameField.getText();
 	}
+		
 	}
+	
 	
 	public JComboBox getSelectTypeBtn() {
 		return this.selectPetType;
@@ -193,7 +195,7 @@ public class AdoptMeView extends JFrame{
 	}
 	
 	public void addSortTypeListener(ActionListener a) {
-		comboBox.addActionListener(a);
+		sortByComboBox.addActionListener(a);
 	}
 	
 	
@@ -215,8 +217,8 @@ public class AdoptMeView extends JFrame{
 		return jPanel;
 	}
 
-	public JComboBox<?> getComboBox() {
-		return comboBox;
+	public JComboBox<?> getSortComboBox() {
+		return sortByComboBox;
 	}
 
 	public JList<?> getList() {
