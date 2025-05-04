@@ -1,9 +1,6 @@
 package adoptme.model;
 
-import java.util.ArrayList;
 import java.util.Vector;
-
-import javax.swing.ListModel;
 
 /**
  * Stores Pets
@@ -28,6 +25,7 @@ public class Shelter <T extends Pet> {
 		}
 		listOfPets.remove(index);
 		System.out.println("Pet was successfully deleted from our system.");
+	
 	}
 	
 	
@@ -51,7 +49,7 @@ public class Shelter <T extends Pet> {
 	    }
 	}
 	
-	public void adoptPet(T pet) {
+	public void adoptPet(Pet pet) {
 		
 		if(pet.getAdoptionStatus() == true) {
 			System.out.println("" + pet.getName() + " was already adopted");

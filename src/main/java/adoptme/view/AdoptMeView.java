@@ -43,6 +43,7 @@ public class AdoptMeView extends JFrame{
 	private JTextField ageField;
 	private JComboBox<Object> selectPetType;
 	private JButton btnAddPet;
+	private JButton adoptBtn;
 	
 	public AdoptMeView(Shelter<?> s) {
 		inputFrame = new JFrame();
@@ -116,6 +117,10 @@ public class AdoptMeView extends JFrame{
 		btnAddPet.setBounds(88, 176, 89, 23);
 		jPanel.add(btnAddPet);
 		
+		adoptBtn = new JButton("Adopt");
+		adoptBtn.setBounds(157, 252, 89, 23);
+		jPanel.add(adoptBtn);
+		
 		
 	
 		
@@ -142,6 +147,11 @@ public class AdoptMeView extends JFrame{
 		return this.selectPetType;
 	}
 	
+	public void addAdoptBtnListener(ActionListener e) {
+		
+		adoptBtn.addActionListener(e);
+		
+	}
 	
 	public void addSortTypeListener(ActionListener a) {
 		comboBox.addActionListener(a);

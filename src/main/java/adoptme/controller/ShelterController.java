@@ -19,10 +19,9 @@ public class ShelterController {
     private AdoptMeView view;
     
     
-    ShelterController(){
+    public ShelterController(){
     	shelter = new Shelter<Pet>();
     	view = new AdoptMeView(shelter);
-    	view.setVisible(true);
     	view.addRmvBtnListener(new RemoveBtnListen(shelter, view));
     	view.addPetBtnListener(new AddPetBtnListener(shelter, view));
     	
@@ -31,7 +30,9 @@ public class ShelterController {
   
     
     
-    
+    public void start() {
+    	view.setVisible(true);
+    }
     
     
     
@@ -101,7 +102,29 @@ public class ShelterController {
     	
     }
     
+    private class AdoptBtnListener implements ActionListener{
+    	
+    	private Shelter<Pet> s;
+    	private AdoptMeView view;
+    	
+    	public void RemoveBtnListen(Shelter<Pet> s, AdoptMeView view){
+    		this.s = s;
+    		this.view = view;
+    	}
+    	
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			s.adoptPet(s.getList().get(view.getList().getSelectedIndex()));
+			
+		}
+    	
+    }
     
+    
+    public Shelter getShelter() {
+    	return this.shelter;
+    }
     
     
     
