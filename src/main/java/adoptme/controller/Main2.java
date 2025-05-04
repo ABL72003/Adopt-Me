@@ -8,10 +8,7 @@ public class Main2 {
 	
 		ShelterController shelterController = new ShelterController();
 		
-		Cat cat = new Cat("Ren", 10, "Cat", false);
 		
-		shelterController.getShelter().addPet(cat);
-
 	}
 
 }

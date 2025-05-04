@@ -39,8 +39,7 @@ public class Shelter <T extends Pet> {
 	System.out.println("Pet was successfully deleted from our system.");
 	}
 	
-	
-	
+
 	
 	
 	public void viewPets() {
