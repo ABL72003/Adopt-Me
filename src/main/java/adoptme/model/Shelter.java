@@ -25,10 +25,24 @@ public class Shelter <T extends Pet> {
 			System.out.println("Pet was not found in our system.");
 			return;
 		}
-		
 		listOfPets.remove(index);
 		System.out.println("Pet was successfully deleted from our system.");
 	}
+	
+	
+	public void deletePet(int index) {
+	
+	if(index == -1) {
+		System.out.println("Pet was not found in our system.");
+		return;
+	}
+	listOfPets.remove(index);
+	System.out.println("Pet was successfully deleted from our system.");
+	}
+	
+	
+	
+	
 	
 	public void viewPets() {
 		for (T pet : listOfPets) {

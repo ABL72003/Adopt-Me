@@ -7,4 +7,8 @@ public class SortBySpecies implements Comparator<Pet>  {
     public int compare(Pet p1, Pet p2) {
         return p1.getSpecies().compareToIgnoreCase(p2.getSpecies());
     }
+	
+	public String toString() {
+		return "Species";
+	}
 }

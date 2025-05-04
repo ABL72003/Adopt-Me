@@ -9,6 +9,8 @@ import javax.swing.event.ListSelectionListener;
 
 import adoptme.model.Pet;
 import adoptme.model.Shelter;
+import adoptme.model.SortByAge;
+import adoptme.model.SortBySpecies;
 
 import javax.swing.JTextPane;
 import javax.swing.ListModel;
@@ -20,13 +22,17 @@ import java.awt.event.ActionListener;
 import javax.swing.JTable;
 import javax.swing.JList;
 import javax.swing.JComboBox;
+import javax.swing.JButton;
 
 public class AdoptMeView extends JFrame{
-	
-	private JFrame inputFrame;
+
 	private JPanel jPanel;
-	private JComboBox<?> comboBox;
+	private JComboBox<Object> comboBox;
 	private JList<?> list;
+	private JFrame inputFrame;
+	private SortByAge ageSort = new SortByAge();
+	private SortBySpecies speciesSort = new SortBySpecies();
+	private JButton rmvBtn;
 	
 	public AdoptMeView(Shelter<?> s) {
 		inputFrame = new JFrame();
@@ -41,6 +47,8 @@ public class AdoptMeView extends JFrame{
 		list.setBounds(254, 82, 503, 227);
 		jPanel.add(list);
 		comboBox = new JComboBox<Object>();
+		comboBox.addItem(ageSort);
+		comboBox.addItem(speciesSort);
 		comboBox.setBounds(636, 51, 121, 21);
 		jPanel.add(comboBox);
 		
@@ -49,19 +57,43 @@ public class AdoptMeView extends JFrame{
 		txtpnSortBy.setText("Sort By:");
 		txtpnSortBy.setBounds(536, 51, 72, 26);
 		jPanel.add(txtpnSortBy);
+		
+		rmvBtn = new JButton("Remove");
+		rmvBtn.setBounds(157, 286, 89, 23);
+		jPanel.add(rmvBtn);
+		
+		
 	
 		
 	}
 	
-	public void addComboListener(ActionListener e) {
-		
-		comboBox.addActionListener(e);
-		
+	
+	
+	
+	public void addRmvBtnListener(ActionListener a) {
+		rmvBtn.addActionListener(a);
 	}
 	
-	public void addSelectListener(ListSelectionListener e) {
-		ListSelectionModel selectModel = list.getSelectionModel();
-		
-		selectModel.addListSelectionListener(e);
+	
+	
+	
+	public JFrame getInputFrame() {
+		return inputFrame;
+	}
+
+	public JPanel getjPanel() {
+		return jPanel;
+	}
+
+	public JComboBox<?> getComboBox() {
+		return comboBox;
+	}
+
+	public JList<?> getList() {
+		return list;
+	}
+
+	public JButton getRmvBtn() {
+		return rmvBtn;
 	}
 }
