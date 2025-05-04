@@ -7,7 +7,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionListener;
 
+import adoptme.model.Cat;
+import adoptme.model.Dog;
+import adoptme.model.ExoticPet;
 import adoptme.model.Pet;
+import adoptme.model.Rabbit;
 import adoptme.model.Shelter;
 import adoptme.model.SortByAge;
 import adoptme.model.SortBySpecies;
@@ -18,11 +22,13 @@ import javax.swing.ListSelectionModel;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JTable;
 import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 public class AdoptMeView extends JFrame{
 
@@ -33,6 +39,10 @@ public class AdoptMeView extends JFrame{
 	private SortByAge ageSort = new SortByAge();
 	private SortBySpecies speciesSort = new SortBySpecies();
 	private JButton rmvBtn;
+	private JTextField nameField;
+	private JTextField ageField;
+	private JComboBox<Object> selectPetType;
+	private JButton btnAddPet;
 	
 	public AdoptMeView(Shelter<?> s) {
 		inputFrame = new JFrame();
@@ -62,6 +72,50 @@ public class AdoptMeView extends JFrame{
 		rmvBtn.setBounds(157, 286, 89, 23);
 		jPanel.add(rmvBtn);
 		
+		nameField = new JTextField();
+		nameField.setBounds(70, 80, 107, 21);
+		jPanel.add(nameField);
+		nameField.setColumns(10);
+		
+		ageField = new JTextField();
+		ageField.setBounds(70, 112, 86, 20);
+		jPanel.add(ageField);
+		ageField.setColumns(10);
+		
+		selectPetType = new JComboBox<Object>();
+		selectPetType.setBounds(70, 143, 60, 22);
+		selectPetType.addItem(new Cat());
+		selectPetType.addItem(new Dog());
+		selectPetType.addItem(new Rabbit());
+		selectPetType.addItem(new ExoticPet());
+		jPanel.add(selectPetType);
+		
+		
+		JTextPane txtpnName = new JTextPane();
+		txtpnName.setText("Name:");
+		txtpnName.setBounds(23, 82, 37, 20);
+		jPanel.add(txtpnName);
+		
+		JTextPane txtpnAge = new JTextPane();
+		txtpnAge.setText("Age:");
+		txtpnAge.setBounds(23, 112, 37, 20);
+		jPanel.add(txtpnAge);
+		
+		JTextPane txtpnSpecies = new JTextPane();
+		txtpnSpecies.setText("Species:");
+		txtpnSpecies.setBounds(10, 143, 50, 20);
+		jPanel.add(txtpnSpecies);
+		
+		JTextPane txtpnAddNewPet = new JTextPane();
+		txtpnAddNewPet.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		txtpnAddNewPet.setText("Add New Pet");
+		txtpnAddNewPet.setBounds(54, 46, 89, 26);
+		jPanel.add(txtpnAddNewPet);
+		
+		btnAddPet = new JButton("Add Pet");
+		btnAddPet.setBounds(88, 176, 89, 23);
+		jPanel.add(btnAddPet);
+		
 		
 	
 		
@@ -75,6 +129,9 @@ public class AdoptMeView extends JFrame{
 	}
 	
 	
+	public void addPetBtn(ActionListener a) {
+		btnAddPet.addActionListener(a);
+	}
 	
 	
 	public JFrame getInputFrame() {

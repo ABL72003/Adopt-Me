@@ -14,6 +14,10 @@ public class Cat extends Pet{
 		super(name, age, species, id, adopted); // Calls Pet's constructor
 	}
 	
+	public Cat(){
+		
+	}
+	
 	/**
 	 * Constructor for users
 	 * @param name
@@ -27,12 +31,12 @@ public class Cat extends Pet{
 	}
 	
 	@Override
-	public String getType() {
+	public String toString() {
 		return "Cat";
 	}
 	
 	@Override
-	public String toString() {
+	public String getType() {
 		 return "Type: " + getType() + super.toString();
 	}
 

@@ -26,13 +26,16 @@ public class Rabbit extends Pet{
 		super(name, age, species, adopted); // Calls Pet's constructor
 	}
 	
+	public Rabbit() {
+	}
+
 	@Override
-	public String getType() {
+	public String toString() {
 		return "Rabbit";
 	}
 	
 	@Override
-	public String toString() {
+	public String getType() {
 		 return "Type: " + getType() + super.toString();
 	}
 }

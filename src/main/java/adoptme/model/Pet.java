@@ -37,6 +37,10 @@ public abstract class Pet implements Comparable<Pet> {
 		this.adopted = adopted;
 	}
 	
+	Pet(){
+		
+	}
+	
 	public String getName() {
 		return name;
 	}

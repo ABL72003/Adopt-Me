@@ -25,6 +25,10 @@ public class ExoticPet extends Pet{
 		this.category = category;
 	}
 	
+	public ExoticPet() {
+		
+	}
+	
 	//getters and setters for the new fields.
 	public String getUniqueId() {
 		return uniqueId;
@@ -51,6 +55,10 @@ public class ExoticPet extends Pet{
 	@Override
 	public String getType() {
 		return "exotic";
+	}
+	
+	public String toString() {
+		return "Exotic";
 	}
 	
 	
