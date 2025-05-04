@@ -121,7 +121,31 @@ public class AdoptMeView extends JFrame{
 		
 	}
 	
+	public Integer getNewPetAge() {
+		String docAge = ageField.getText();
+		if(docAge.equals(null)) {
+			return 0;
+		}
+		Integer age = Integer.parseInt(docAge);
+		return age;
+	}
 	
+	public String getNewPetName() {
+		if(nameField.getText().equals(null)) {
+			return "";
+		} else {
+		return nameField.getText();
+	}
+	}
+	
+	public JComboBox getSelectTypeBtn() {
+		return this.selectPetType;
+	}
+	
+	
+	public void addSortTypeListener(ActionListener a) {
+		comboBox.addActionListener(a);
+	}
 	
 	
 	public void addRmvBtnListener(ActionListener a) {
@@ -129,7 +153,7 @@ public class AdoptMeView extends JFrame{
 	}
 	
 	
-	public void addPetBtn(ActionListener a) {
+	public void addPetBtnListener(ActionListener a) {
 		btnAddPet.addActionListener(a);
 	}
 	

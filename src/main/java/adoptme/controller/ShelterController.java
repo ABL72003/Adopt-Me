@@ -1,5 +1,9 @@
 package adoptme.controller;
+import adoptme.model.Cat;
+import adoptme.model.Dog;
+import adoptme.model.ExoticPet;
 import adoptme.model.Pet;
+import adoptme.model.Rabbit;
 import adoptme.model.Shelter;
 import adoptme.view.AdoptMeView;
 import adoptme.view.Main;
@@ -18,8 +22,9 @@ public class ShelterController {
     ShelterController(){
     	shelter = new Shelter<Pet>();
     	view = new AdoptMeView(shelter);
-    	view.addRmvBtnListener(new RemoveBtnListen(shelter, view.getList()));
-    	
+    	view.setVisible(true);
+    	view.addRmvBtnListener(new RemoveBtnListen(shelter, view));
+    	view.addPetBtnListener(new AddPetBtnListener(shelter, view));
     	
     	
     }
@@ -31,6 +36,45 @@ public class ShelterController {
     
     
     private class AddPetBtnListener implements ActionListener{
+    	private Shelter<Pet> shelter;
+    	private AdoptMeView view;
+    	
+    	AddPetBtnListener(Shelter<Pet> shelter, AdoptMeView view){
+    		this.shelter = shelter;
+    		this.view = view;
+    	}
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			
+			if(view.getSelectTypeBtn().getSelectedItem().toString() == "Cat") {
+				
+				Pet newPet = new Cat(view.getNewPetName(),view.getNewPetAge(),view.getSelectTypeBtn().getSelectedItem().toString(),false);
+				shelter.addPet(newPet);
+			}
+			
+			if(view.getSelectTypeBtn().getSelectedItem().toString() == "Dog") {
+				
+				Pet newPet = new Dog(view.getNewPetName(),view.getNewPetAge(),view.getSelectTypeBtn().getSelectedItem().toString(),false);
+				shelter.addPet(newPet);
+			}
+			
+			if(view.getSelectTypeBtn().getSelectedItem().toString() == "Rabbit") {
+				
+				Pet newPet = new Rabbit(view.getNewPetName(),view.getNewPetAge(),view.getSelectTypeBtn().getSelectedItem().toString(),false);
+				shelter.addPet(newPet);
+			}
+			
+			if(view.getSelectTypeBtn().getSelectedItem().toString() == "Exotic") {
+				
+				Pet newPet = new ExoticPet(view.getNewPetName(),view.getNewPetAge(),view.getSelectTypeBtn().getSelectedItem().toString(),false);
+				shelter.addPet(newPet);
+			}
+			
+		}
+    	
+    	
     	
     }
     
@@ -41,17 +85,17 @@ public class ShelterController {
     private class RemoveBtnListen implements ActionListener{
     	
     	private Shelter<Pet> s;
-    	private JList<Object> list;
+    	private AdoptMeView view;
     	
-    	RemoveBtnListen(Shelter<Pet> s, JList list){
+    	RemoveBtnListen(Shelter<Pet> s, AdoptMeView view){
     		this.s = s;
-    		this.list = list;
+    		this.view = view;
     	}
     	
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			
-			s.deletePet(list.getSelectedIndex());
+			s.deletePet(view.getList().getSelectedIndex());
 			
 		}
     	

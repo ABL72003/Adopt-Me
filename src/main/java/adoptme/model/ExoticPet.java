@@ -29,6 +29,10 @@ public class ExoticPet extends Pet{
 		
 	}
 	
+	public ExoticPet(String name, int age, String species, boolean adopted) {
+		super(name,age,species,adopted);
+	}
+	
 	//getters and setters for the new fields.
 	public String getUniqueId() {
 		return uniqueId;
