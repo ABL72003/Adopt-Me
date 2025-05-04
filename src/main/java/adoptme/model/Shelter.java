@@ -1,5 +1,6 @@
 package adoptme.model;
 
+import java.util.Collections;
 import java.util.Vector;
 
 import javax.swing.ListModel;
@@ -40,10 +41,6 @@ public class Shelter <T extends Pet> {
 	System.out.println("Pet was successfully deleted from our system.");
 	}
 	
-	
-	
-	
-	
 	public void viewPets() {
 		for (T pet : listOfPets) {
 	        System.out.println(pet);
@@ -64,5 +61,17 @@ public class Shelter <T extends Pet> {
 
 	public Vector<T> getList(){
 		return this.listOfPets;
+	}
+	
+	public void sortByName() {
+		Collections.sort(listOfPets);
+	}
+	
+	public void sortBySpecies() {
+		Collections.sort(listOfPets, new SortBySpecies());
+	}
+	
+	public void sortByAge() {
+		Collections.sort(listOfPets, new SortByAge());
 	}
 }
