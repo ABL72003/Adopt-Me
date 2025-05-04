@@ -1,7 +1,5 @@
 package adoptme.model;
 
-import java.util.Vector;
-
 import javax.swing.DefaultListModel;
 
 /**
