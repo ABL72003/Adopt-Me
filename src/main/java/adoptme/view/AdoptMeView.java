@@ -49,6 +49,7 @@ public class AdoptMeView extends JFrame{
 		inputFrame = new JFrame();
 		inputFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		inputFrame.setSize(800,400);
+		inputFrame.pack();
 		jPanel = new JPanel();
 		jPanel.setBorder(new EmptyBorder(5,5,5,5));
 		inputFrame.getContentPane().add(jPanel);
