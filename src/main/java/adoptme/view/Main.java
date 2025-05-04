@@ -20,17 +20,17 @@ public class Main {
         shelter.viewPets();
 
         // Sort by name (Comparable)
-        Collections.sort(shelter.getListOfPets());  // Uses compareTo in Pet class (default sort by name)
+        Collections.sort(shelter.getList());  // Uses compareTo in Pet class (default sort by name)
         System.out.println("\n=== Sorted by Name ===");
         shelter.viewPets();
 
         // Sort by age using SortByAge comparator
-        shelter.getListOfPets().sort(new SortByAge());
+        shelter.getList().sort(new SortByAge());
         System.out.println("\n=== Sorted by Age ===");
         shelter.viewPets();
 
         // Sort by species using SortBySpecies comparator
-        shelter.getListOfPets().sort(new SortBySpecies());
+        shelter.getList().sort(new SortBySpecies());
         System.out.println("\n=== Sorted by Species ===");
         shelter.viewPets();
         
@@ -38,7 +38,7 @@ public class Main {
         System.out.println("\n=== Adoption Test ===");
 
         // Try adopting a pet
-        Pet petToAdopt = shelter.getListOfPets().get(0); // e.g., Buddy
+        Pet petToAdopt = shelter.getList().get(0); // e.g., Buddy
         System.out.println("Attempting to adopt: " + petToAdopt.getName());
         shelter.adoptPet(petToAdopt);
 
