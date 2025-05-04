@@ -48,6 +48,7 @@ public class AdoptMeView extends JFrame{
 	private JComboBox<Object> selectPetType;
 	private JButton btnAddPet;
 	private JButton adoptBtn;
+	private JTable table;
 	
 	public AdoptMeView(Shelter<?> s) {
 		inputFrame = new JFrame();
@@ -59,8 +60,12 @@ public class AdoptMeView extends JFrame{
 		jPanel.setLayout(null);
 		
 		list = new JList<>(s.getList());
-		list.setBounds(254, 82, 617, 227);
+		list.setBounds(254, 82, 720, 227);
 		jPanel.add(list);
+		
+		table = new JTable();
+		table.setBounds(0, 0, 1, 1);
+		jPanel.add(table);
 		comboBox = new JComboBox<Object>();
 		comboBox.addItem(ageSort);
 		comboBox.addItem(speciesSort);

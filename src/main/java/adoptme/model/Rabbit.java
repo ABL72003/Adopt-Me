@@ -36,6 +36,6 @@ public class Rabbit extends Pet{
 	
 	@Override
 	public String toString() {
-		 return "Type: " + getType() + super.toString();
+		 return super.toString();
 	}
 }

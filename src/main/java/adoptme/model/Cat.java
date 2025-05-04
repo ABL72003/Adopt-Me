@@ -39,7 +39,7 @@ public class Cat extends Pet{
 	
 	@Override
 	public String toString() {
-		 return "Type: " + getType() + super.toString();
+		 return super.toString();
 	}
 
 }
