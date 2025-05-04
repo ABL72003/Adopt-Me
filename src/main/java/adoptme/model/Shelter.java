@@ -15,7 +15,9 @@ public class Shelter <T extends Pet> {
 	}
 	
     public void addPet(T pet) {
+    	pet.setAdoptionStatus(false);
         listOfPets.addElement(pet);
+        
     }
     
 	public void deletePet(T pet) {
@@ -55,4 +57,6 @@ public class Shelter <T extends Pet> {
     public DefaultListModel<T> getList() {
         return listOfPets;
     }
+    
+    
 }

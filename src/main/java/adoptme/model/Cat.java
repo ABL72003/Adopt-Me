@@ -30,13 +30,15 @@ public class Cat extends Pet{
 		super(name, age, species, adopted); // Calls Pet's constructor
 	}
 	
+	
+	
 	@Override
-	public String toString() {
+	public String getType() {
 		return "Cat";
 	}
 	
 	@Override
-	public String getType() {
+	public String toString() {
 		 return "Type: " + getType() + super.toString();
 	}
 

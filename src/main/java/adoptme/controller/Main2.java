@@ -14,7 +14,6 @@ public class Main2 {
 		shelterController.getShelter().addPet(cat);
 		
 		Shelter shelter = shelterController.getShelter();
-		shelter.viewPets();
 		shelter.getList();
 		shelterController.start();
 	}

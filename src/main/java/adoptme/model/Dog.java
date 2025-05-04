@@ -32,12 +32,12 @@ public class Dog extends Pet{
 	}
 	
 	@Override
-	public String toString() {
+	public String getType() {
 		return "Dog";
 	}
 	
 	@Override
-	public String getType() {
+	public String toString() {
 	    return "Type: " + getType() + super.toString();
 	}
 }

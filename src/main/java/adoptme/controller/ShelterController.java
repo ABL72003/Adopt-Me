@@ -31,7 +31,7 @@ public class ShelterController {
     
     
     public void start() {
-    	view.getInputFrame().setVisible(true);
+    	view.start();
     	}
     
     
@@ -49,25 +49,25 @@ public class ShelterController {
 		public void actionPerformed(ActionEvent arg0) {
 			
 			
-			if(view.getSelectTypeBtn().getSelectedItem().toString().equals("Cat")) {
+			if(view.getSelectTypeBtn().getSelectedItem().getClass().equals(Cat.class)){
 				
 				Pet newPet = new Cat(view.getNewPetName(),view.getNewPetAge(),view.getSelectTypeBtn().getSelectedItem().toString(),false);
 				shelter.addPet(newPet);
 			}
 			
-			if(view.getSelectTypeBtn().getSelectedItem().toString().equals("Dog")) {
+			if(view.getSelectTypeBtn().getSelectedItem().getClass().equals(Dog.class)) {
 				
 				Pet newPet = new Dog(view.getNewPetName(),view.getNewPetAge(),view.getSelectTypeBtn().getSelectedItem().toString(),false);
 				shelter.addPet(newPet);
 			}
 			
-			if(view.getSelectTypeBtn().getSelectedItem().toString().equals("Rabbit")) {
+			if(view.getSelectTypeBtn().getSelectedItem().getClass().equals(Rabbit.class)) {
 				
 				Pet newPet = new Rabbit(view.getNewPetName(),view.getNewPetAge(),view.getSelectTypeBtn().getSelectedItem().toString(),false);
 				shelter.addPet(newPet);
 			}
 			
-			if(view.getSelectTypeBtn().getSelectedItem().toString().equals("Exotic")) {
+			if(view.getSelectTypeBtn().getSelectedItem().getClass().equals(ExoticPet.class)) {
 				
 				Pet newPet = new ExoticPet(view.getNewPetName(),view.getNewPetAge(),view.getSelectTypeBtn().getSelectedItem().toString(),false);
 				shelter.addPet(newPet);
