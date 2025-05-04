@@ -34,7 +34,7 @@ public class Dog extends Pet{
 	
 	@Override
 	public String toString() {
-	    return "Type: " + getType() + super.toString();
+	    return getType() + super.toString();
 	}
 
 }
