@@ -1,6 +1,5 @@
 package adoptme.model;
 
-import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.ListModel;
@@ -53,16 +52,17 @@ public class Shelter <T extends Pet> {
 	
 	public void adoptPet(T pet) {
 		
-		if(pet.getAdoptionStatus() == true) {
-			System.out.println("" + pet.getName() + " was already adopted");
-			return;
+		if(pet.getAdoptionStatus()) {
+			System.out.println("" + pet.getName() + " was already adopted you cant adopt again.");
 		}
-		pet.setAdoptionStatus(true);
-		System.out.println("Pet: " + pet.getName() + " was adopted!");
+		
+		if(!pet.getAdoptionStatus()) {
+			pet.setAdoptionStatus(true);
+			System.out.println("Pet: " + pet.getName() + " was adopted!");
+		}
 	}
 
 	public Vector<T> getList(){
 		return this.listOfPets;
 	}
-	
 }

@@ -36,4 +36,5 @@ public class Dog extends Pet{
 	public String toString() {
 	    return "Type: " + getType() + super.toString();
 	}
+
 }
