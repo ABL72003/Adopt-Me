@@ -1,5 +1,9 @@
 package adoptme.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import javax.swing.DefaultListModel;
 
 /**
@@ -77,5 +81,68 @@ public class Shelter <T extends Pet> {
         return listOfPets;
     }
     
+    /**
+     * Sorts pets by age
+     */
+    public void sortPetsByAge() {
+        // Convert DefaultListModel to List<Pet>
+        List<T> petList = new ArrayList<>();
+        for (int i = 0; i < listOfPets.getSize(); i++) {
+            petList.add(listOfPets.get(i));
+        }
+        
+        // Sort the List<Pet>
+        petList.sort(new SortByAge());
+        
+        // Convert the sorted List<Pet> back to DefaultListModel
+        DefaultListModel<T> sortedModel = new DefaultListModel<>();
+        for (T pet : petList) {
+            sortedModel.addElement(pet);
+        }
+        
+        // Set the sorted model back to the pets DefaultListModel
+        listOfPets = sortedModel;  // Update the DefaultListModel with the sorted one
+    }
+
+    	/**
+    	 * Sorts pets by species
+    	 */
+    public void sortPetsBySpecies() {
+        List<T> petList = new ArrayList<>();
+        for (int i = 0; i < listOfPets.getSize(); i++) {
+            petList.add(listOfPets.get(i));  // Get all pets in List<Pet>
+        }
+        
+        petList.sort(new SortBySpecies());  // Sort by species
+        
+        DefaultListModel<T> sortedModel = new DefaultListModel<>();
+        for (T pet : petList) {
+            sortedModel.addElement(pet);  // Add sorted pets to the DefaultListModel
+        }
+        
+        listOfPets = sortedModel;  // Update the DefaultListModel with the sorted one
+    }
+    
+    /**
+     * Sorts pets by name
+     */
+    public void sortPetsByName() {
+        // Convert DefaultListModel to List<Pet>
+        List<T> petList = new ArrayList<>();
+        for (int i = 0; i < listOfPets.size(); i++) {
+            petList.add(listOfPets.get(i));
+        }
+
+        Collections.sort(petList);  
+
+        // Convert sorted List<Pet> back to DefaultListModel
+        DefaultListModel<T> sortedModel = new DefaultListModel<>();
+        for (T pet : petList) {
+            sortedModel.addElement(pet);
+        }
+
+        // Set sorted model
+        listOfPets = sortedModel;
+    }
     
 }
