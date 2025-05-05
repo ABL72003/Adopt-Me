@@ -5,6 +5,7 @@ import adoptme.model.ExoticPet;
 import adoptme.model.Pet;
 import adoptme.model.Rabbit;
 import adoptme.model.Shelter;
+import adoptme.model.SortByAge;
 import adoptme.view.AdoptMeView;
 import adoptme.view.Main;
 import java.awt.event.*;
@@ -121,19 +122,25 @@ public class ShelterController {
     	
     }
     
-//    private class FilterComboBoxListener implements ActionListener{
-//
-//		@Override
-//		public void actionPerformed(ActionEvent e) {
-//			view.getSortComboBox().getSelectedItem()
-//			
-//    }
-//   	
-//
-   // }
-    
-    
-    //FINISH SORTING ALGORITHM IMPLEMENTATION LISTENER UP ABOVE
+    private class FilterComboBoxListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(view.getSortComboBox().getSelectedItem().getClass().equals("Age")) {
+				shelter.sortPetsByAge();
+			}
+			
+			if(view.getSortComboBox().getSelectedItem().getClass().equals("Species")) {
+				shelter.sortPetsBySpecies();
+			}
+			
+			if(view.getSortComboBox().getSelectedItem().getClass().equals("Name")) {
+				shelter.sortPetsByName();
+			}
+		}
+   	
+
+    }
     
     public Shelter getShelter() {
     	return this.shelter;
