@@ -152,7 +152,7 @@ public abstract class Pet implements Comparable<Pet> {
 	 */
 	@Override
 	public String toString() {
-	    return ", Name: " + getName() + ", Species: " + getSpecies() +  ", Age: " + getAge() +
+	    return "Name: " + getName() + ", Species: " + getSpecies() +  ", Age: " + getAge() +
 	           ", ID: " + getID() + ", Adopted: " + getAdoptionStatus();
 	}
 }
