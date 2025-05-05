@@ -37,50 +37,90 @@ public abstract class Pet implements Comparable<Pet> {
 		this.adopted = adopted;
 	}
 	
-	Pet(){
-		
-	}
-	
+	/**
+	 * Returns name of pet
+	 * @return
+	 */
 	public String getName() {
 		return name;
 	}
 	
+	/**
+	 * Returns age of pet
+	 * @return
+	 */
 	public int getAge() {
 		return age;
 	}
 	
+	/**
+	 * Returns pet species
+	 * @return
+	 */
 	public String getSpecies() {
 		return species;
 	}
 	
+	/**
+	 * Returns pet ID
+	 * @return
+	 */
 	public int getID() {
 		return id;
 	}
 	
+	/**
+	 * Returns pet's adoption status
+	 * @return
+	 */
 	public boolean getAdoptionStatus() {
 		return adopted;
 	}
 	
+	/**
+	 * Abstract method that returns pet type
+	 * @return
+	 */
 	public abstract String getType();
 	
+	/**
+	 * Takes user input of the pet name
+	 * @param name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 	
+	/**
+	 * Takes user input of pet's age
+	 * @param age
+	 */
 	public void setAge(int age) {
 		this.age = age;
 	}
 	
+	/**
+	 * Takes user input of pet's species
+	 * @param species
+	 */
 	public void setSpecies(String species) {
 		this.species = species;
 	}
 	
+	/**
+	 * Takes user input of the pet's ID
+	 * @param id
+	 */
 	public void setID(int id) {
 		this.id = id;
 	}
 	
+	/**
+	 * Takes user input of the pet's adoption status
+	 * @param adopted
+	 */
 	public void setAdoptionStatus(boolean adopted) {
-	    // Don't allow un-adopting once adopted
+	    // Pet can't be unadopted  
 	    if (this.adopted && !adopted) {
 	        System.out.println("Cannot un-adopt a pet once adopted.");
 	        return;
@@ -92,11 +132,17 @@ public abstract class Pet implements Comparable<Pet> {
 	    }
 	}
 	
+	/**
+	 * Compares pets names
+	 */
 	@Override
 	public int compareTo(Pet otherPet) {
 		return this.name.compareTo(otherPet.getName());  // Default comparison by name
 	}
 	
+	/**
+	 * Prints pet information
+	 */
 	@Override
 	public String toString() {
 	    return ", Name: " + getName() + ", Species: " + getSpecies() +  ", Age: " + getAge() +

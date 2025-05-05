@@ -31,11 +31,17 @@ public class Dog extends Pet{
 		super(name, age, species, adopted); // Calls Pet's constructor
 	}
 	
+	/**
+	 * Returns Pet type
+	 */
 	@Override
 	public String getType() {
 		return "Dog";
 	}
 	
+	/**
+	 * Prints pet information
+	 */
 	@Override
 	public String toString() {
 	    return super.toString();

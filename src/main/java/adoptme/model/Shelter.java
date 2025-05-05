@@ -8,16 +8,27 @@ import javax.swing.DefaultListModel;
  */
 public class Shelter <T extends Pet> {
 	private DefaultListModel<T> listOfPets = new DefaultListModel<>();
-
+	
+	/**
+	 * Constructor for shelter
+	 */
 	public Shelter() {
 	}
 	
+	/**
+	 * Adds a pet to the list 
+	 * @param pet
+	 */
     public void addPet(T pet) {
     	pet.setAdoptionStatus(false);
         listOfPets.addElement(pet);
         
     }
     
+    /**
+     * Deletes a pet from the list
+     * @param pet
+     */
 	public void deletePet(T pet) {
 		int index = listOfPets.indexOf(pet);
 		
@@ -30,7 +41,10 @@ public class Shelter <T extends Pet> {
 	
 	}
 	
-	
+	/**
+	 * Deletes a pet from the list given an index
+	 * @param index
+	 */
     public void deletePet(int index) {
         if (index < 0 || index >= listOfPets.size()) {
             System.out.println("Pet was not found in our system.");
@@ -41,7 +55,10 @@ public class Shelter <T extends Pet> {
     }
 	
 
-	
+	/**
+	 * Adopts a pet from the list if pet hasn't been adopted yet
+	 * @param pet
+	 */
 	public void adoptPet(Pet pet) {
 		
 		if(pet.getAdoptionStatus() == true) {
@@ -51,7 +68,11 @@ public class Shelter <T extends Pet> {
 		pet.setAdoptionStatus(true);
 		System.out.println("Pet: " + pet.getName() + " was adopted!");
 	}
-
+	
+	/**
+	 * Returns a list of pets
+	 * @return
+	 */
     public DefaultListModel<T> getList() {
         return listOfPets;
     }

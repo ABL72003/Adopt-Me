@@ -31,12 +31,17 @@ public class Cat extends Pet{
 	}
 	
 	
-	
+	/**
+	 * Returns cat
+	 */
 	@Override
 	public String getType() {
 		return "Cat";
 	}
 	
+	/**
+	 * Prints pet information
+	 */
 	@Override
 	public String toString() {
 		 return super.toString();

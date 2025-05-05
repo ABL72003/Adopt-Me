@@ -29,26 +29,45 @@ public class ExoticPet extends Pet{
 		
 	}
 	
+	/**
+	 * Constructor for exotic pets for the users
+	 * @param name
+	 * @param age
+	 * @param species
+	 * @param adopted
+	 */
 	public ExoticPet(String name, int age, String species, boolean adopted) {
 		super(name,age,species,adopted);
 	}
 	
-	//getters and setters for the new fields.
+	/**
+	 * Returns uniqueID
+	 * @return
+	 */
 	public String getUniqueId() {
 		return uniqueId;
 	}
 
-
+	/**
+	 * Takes user's input of an exotic animal's uniqueID
+	 * @param uniqueId
+	 */
 	public void setUniqueId(String uniqueId) {
 		this.uniqueId = uniqueId;
 	}
 
-
+	/**
+	 * Returns category
+	 * @return
+	 */
 	public String getCategory() {
 		return category;
 	}
 
-
+	/**
+	 * Takes user's input of a category
+	 * @param category
+	 */
 	public void setCategory(String category) {
 		this.category = category;
 	}
@@ -61,6 +80,9 @@ public class ExoticPet extends Pet{
 		return "exotic";
 	}
 	
+	/**
+	 * Prints exotic
+	 */
 	public String toString() {
 		return "Exotic";
 	}

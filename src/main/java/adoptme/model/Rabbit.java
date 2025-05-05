@@ -28,12 +28,18 @@ public class Rabbit extends Pet{
 	
 	public Rabbit() {
 	}
-
+	
+	/**
+	 * Returns pet type
+	 */
 	@Override
 	public String getType() {
 		return "Rabbit";
 	}
 	
+	/**
+	 * prints pet information
+	 */
 	@Override
 	public String toString() {
 		 return super.toString();
