@@ -19,7 +19,9 @@ public class ShelterController {
 	private Shelter<Pet> shelter;
     private AdoptMeView view;
     
-    
+    /**
+     * Constructor for shelterController
+     */
     public ShelterController(){
     	shelter = new Shelter<Pet>();
     	view = new AdoptMeView(shelter);
@@ -30,22 +32,34 @@ public class ShelterController {
     }
   
     
-    
+    /**
+     * Start
+     */
     public void start() {
     	view.start();
     	}
     
     
-    
+    /**
+     * Button listener class
+     */
     private class AddPetBtnListener implements ActionListener{
     	private Shelter<Pet> shelter;
     	private AdoptMeView view;
     	
+    	/**
+    	 * Adds pet button listener
+    	 * @param shelter
+    	 * @param view
+    	 */
     	AddPetBtnListener(Shelter<Pet> shelter, AdoptMeView view){
     		this.shelter = shelter;
     		this.view = view;
     	}
-
+    	
+    	/**
+    	 * override for actionPerformed
+    	 */
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			
@@ -83,17 +97,27 @@ public class ShelterController {
     
     
     
-    
+    /**
+     * Class for remove button
+     */
     private class RemoveBtnListen implements ActionListener{
     	
     	private Shelter<Pet> s;
     	private AdoptMeView view;
     	
+    	/**
+    	 * Remove button listener
+    	 * @param s
+    	 * @param view
+    	 */
     	RemoveBtnListen(Shelter<Pet> s, AdoptMeView view){
     		this.s = s;
     		this.view = view;
     	}
     	
+    	/**
+    	 * Override the action performed
+    	 */
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			
@@ -103,16 +127,27 @@ public class ShelterController {
     	
     }
     
+    /**
+     * Class for Adoption button Listener
+     */
     private class AdoptBtnListener implements ActionListener{
     	
     	private Shelter<Pet> s;
     	private AdoptMeView view;
     	
+    	/**
+    	 * Removes button listener
+    	 * @param s
+    	 * @param view
+    	 */
     	public void RemoveBtnListen(Shelter<Pet> s, AdoptMeView view){
     		this.s = s;
     		this.view = view;
     	}
     	
+    	/**
+    	 * Override for action performed
+    	 */
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			
@@ -122,8 +157,14 @@ public class ShelterController {
     	
     }
     
+    /**
+     * Class for filtering the comboBox listener
+     */
     private class FilterComboBoxListener implements ActionListener{
-
+    	
+    	/**
+    	 * Override for action performed
+    	 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if(view.getSortComboBox().getSelectedItem().getClass().equals("Age")) {
@@ -142,6 +183,10 @@ public class ShelterController {
 
     }
     
+    /**
+     * Returns shelter
+     * @return
+     */
     public Shelter getShelter() {
     	return this.shelter;
     }

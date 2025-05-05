@@ -163,10 +163,17 @@ public class AdoptMeView extends JFrame{
 		
 	}
 	
+	/**
+	 * Start
+	 */
 	public void start() {
 		inputFrame.setVisible(true);
 	}
 	
+	/**
+	 * Returns new pet age
+	 * @return
+	 */
 	public Integer getNewPetAge() {
 		String docAge = ageField.getText();
 		if(docAge.equals(null)) {
@@ -176,6 +183,10 @@ public class AdoptMeView extends JFrame{
 		return age;
 	}
 	
+	/**
+	 * Returns new pet name
+	 * @return
+	 */
 	public String getNewPetName() {
 		if(nameField.getText().equals(null)) {
 			return "";
@@ -185,48 +196,84 @@ public class AdoptMeView extends JFrame{
 		
 	}
 	
-	
+	/**
+	 * Returns pet type
+	 * @return
+	 */
 	public JComboBox getSelectTypeBtn() {
 		return this.selectPetType;
 	}
 	
+	/**
+	 * listener for adoption button
+	 * @param e
+	 */
 	public void addAdoptBtnListener(ActionListener e) {
 		
 		adoptBtn.addActionListener(e);
 		
 	}
 	
+	/**
+	 * Listener for sort Type 
+	 * @param a
+	 */
 	public void addSortTypeListener(ActionListener a) {
 		sortByComboBox.addActionListener(a);
 	}
 	
-	
+	/**
+	 * Listener for removing button
+	 * @param a
+	 */
 	public void addRmvBtnListener(ActionListener a) {
 		rmvBtn.addActionListener(a);
 	}
 	
-	
+	/**
+	 * Listener for add pet button
+	 * @param a
+	 */
 	public void addPetBtnListener(ActionListener a) {
 		btnAddPet.addActionListener(a);
 	}
 	
-	
+	/**
+	 * Returns inputFrame
+	 * @return
+	 */
 	public JFrame getInputFrame() {
 		return inputFrame;
 	}
-
+	
+	/**
+	 * Returns jPanel
+	 * @return
+	 */
 	public JPanel getjPanel() {
 		return jPanel;
 	}
-
+	
+	/**
+	 * Returns the comboBox of sorting options
+	 * @return
+	 */
 	public JComboBox<?> getSortComboBox() {
 		return sortByComboBox;
 	}
-
+	
+	/**
+	 * Returns list
+	 * @return
+	 */
 	public JList<?> getList() {
 		return list;
 	}
-
+	
+	/**
+	 * Returns Button
+	 * @return
+	 */
 	public JButton getRmvBtn() {
 		return rmvBtn;
 	}
