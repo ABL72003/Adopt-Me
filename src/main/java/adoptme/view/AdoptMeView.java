@@ -42,6 +42,7 @@ public class AdoptMeView extends JFrame{
 	private JFrame inputFrame;
 	private SortByAge ageSort = new SortByAge();
 	private SortBySpecies speciesSort = new SortBySpecies();
+	private final String nameSort = "Name";
 	private JButton rmvBtn;
 	private JTextField nameField;
 	private JTextField ageField;
@@ -69,6 +70,7 @@ public class AdoptMeView extends JFrame{
 		sortByComboBox = new JComboBox<Object>();
 		sortByComboBox.addItem(ageSort);
 		sortByComboBox.addItem(speciesSort);
+		sortByComboBox.addItem(nameSort);
 		sortByComboBox.setBounds(750, 50, 121, 21);
 		jPanel.add(sortByComboBox);
 		
