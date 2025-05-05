@@ -38,6 +38,13 @@ public abstract class Pet implements Comparable<Pet> {
 	}
 	
 	/**
+	 * Constructor calling pet
+	 */
+	public Pet() {
+		
+	}
+	
+	/**
 	 * Returns name of pet
 	 * @return
 	 */
